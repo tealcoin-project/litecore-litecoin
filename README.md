@@ -1,42 +1,42 @@
-Litecoin Core integration/staging tree
+Tealcoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/litecoin-project/litecoin.svg?branch=master)](https://travis-ci.org/litecoin-project/litecoin)
+https://tealcoin-project.io
 
-https://litecoin.org
+Copyright (c) 2018 Tealcoin Core Developers
 
-What is Litecoin?
+What is Tealcoin?
 ----------------
 
-Litecoin is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Litecoin uses peer-to-peer technology to operate
+Tealcoin is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. Tealcoin uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Litecoin Core is the name of open source
+out collectively by the network. Tealcoin Core is the name of open source
 software which enables the use of this currency.
 
+Tealcoin started in March 2018 as a variant of Litecoin using Scrypt as the Proof-of-Work (PoW) hash algorithm.
+
+- Max Money 20,000,000
+- Total Supply 126,140,000
+- Subsidy halves every 12,614,000 blocks which will occur approximately every 2 years.
+- Block time change to 5 seconds
+- Re-targeting every 48 blocks approximately every 4 minutes.
+- 5 coins reward
+- Make with a very low mining difficulty
+
 For more information, as well as an immediately useable, binary version of
-the Litecoin Core software, see [https://litecoin.org](https://litecoin.org).
+the Tealcoin Core software, see [https://tealcoin-project.io](https://tealcoin-project.io).
 
 License
 -------
 
-Litecoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Tealcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/litecoin-project/litecoin/tags) are created
-regularly to indicate new official, stable release versions of Litecoin Core.
-
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-The developer [mailing list](https://groups.google.com/forum/#!forum/litecoin-dev)
-should be used to discuss complicated or controversial changes before working
-on a patch set.
-
-Developer IRC can be found on Freenode at #litecoin-dev.
 
 Testing
 -------
@@ -48,9 +48,10 @@ lots of money.
 
 ### Automated Testing
 
-Developers are strongly encouraged to write [unit tests](/doc/unit-tests.md) for new code, and to
+Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
 submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`
+(assuming they weren't disabled in configure) with: `make check`. Further details on running
+and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
 
 There are also [regression and integration tests](/qa) of the RPC interface, written
 in Python, that are run automatically on the build server.
@@ -69,7 +70,7 @@ Translations
 ------------
 
 We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
-Translations are converted to Litecoin periodically.
+Translations are converted to Tealcoin periodically.
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
