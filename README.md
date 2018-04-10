@@ -14,7 +14,7 @@ with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Tealcoin Core is the name of open source
 software which enables the use of this currency.
 
-Tealcoin started in March 2018 as a variant of Litecoin using Scrypt as the Proof-of-Work (PoW) hash algorithm.
+Tealcoin started in March 2018 as a variant of Tealcoin using Scrypt as the Proof-of-Work (PoW) hash algorithm.
 
 - Max Money 20,000,000
 - Total Supply 126,140,000
