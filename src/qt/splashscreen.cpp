@@ -30,10 +30,10 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     QWidget(0, f), curAlignment(0)
 {
     // set reference point, paddings
-    int paddingRight            = 50;
-    int paddingTop              = 50;
-    int titleVersionVSpace      = 17;
-    int titleCopyrightVSpace    = 40;
+    int paddingRight            = 30;
+    int paddingTop              = 140;
+    int titleVersionVSpace      = 13;
+    int titleCopyrightVSpace    = 25;
 
     float fontFactor            = 1.0;
     float devicePixelRatio      = 1.0;
