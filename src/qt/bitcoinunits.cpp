@@ -20,6 +20,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     unitlist.append(BTC);
     unitlist.append(mBTC);
     unitlist.append(uBTC);
+    unitlist.append(nBTC);
     return unitlist;
 }
 
@@ -30,6 +31,7 @@ bool BitcoinUnits::valid(int unit)
     case BTC:
     case mBTC:
     case uBTC:
+    case nBTC:
         return true;
     default:
         return false;
@@ -43,6 +45,7 @@ QString BitcoinUnits::name(int unit)
     case BTC: return QString("TEAL");
     case mBTC: return QString("mTEAL");
     case uBTC: return QString::fromUtf8("μTEAL");
+    case nBTC: return QString("nTEAL");
     default: return QString("???");
     }
 }
@@ -54,6 +57,7 @@ QString BitcoinUnits::description(int unit)
     case BTC: return QString("Tealcoins");
     case mBTC: return QString("Milli-Tealcoins (1 / 1" THIN_SP_UTF8 "000)");
     case uBTC: return QString("Micro-Tealcoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case nBTC: return QString("Nano-Tealcoins (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
@@ -65,6 +69,7 @@ qint64 BitcoinUnits::factor(int unit)
     case BTC:  return 100000000;
     case mBTC: return 100000;
     case uBTC: return 100;
+    case nBTC: return 1;
     default:   return 100000000;
     }
 }
@@ -76,6 +81,7 @@ int BitcoinUnits::decimals(int unit)
     case BTC: return 8;
     case mBTC: return 5;
     case uBTC: return 2;
+    case nBTC: return 0;
     default: return 0;
     }
 }
@@ -93,7 +99,13 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
     qint64 quotient = n_abs / coin;
     qint64 remainder = n_abs % coin;
     QString quotient_str = QString::number(quotient);
-    QString remainder_str = QString::number(remainder).rightJustified(num_decimals, '0');
+    QString remainder_str = '\0';
+    QString separator = '\0';
+
+    if (num_decimals > 0) {
+	remainder_str = QString::number(remainder).rightJustified(num_decimals, '0');
+	separator = '.';
+    }
 
     // Use SI-style thin space separators as these are locale independent and can't be
     // confused with the decimal marker.
@@ -107,7 +119,8 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
         quotient_str.insert(0, '-');
     else if (fPlus && n > 0)
         quotient_str.insert(0, '+');
-    return quotient_str + QString(".") + remainder_str;
+
+    return quotient_str + separator + remainder_str;
 }
 
 
