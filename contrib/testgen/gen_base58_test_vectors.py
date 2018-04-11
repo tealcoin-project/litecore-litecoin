@@ -18,12 +18,12 @@ import random
 from binascii import b2a_hex
 
 # key types
-PUBKEY_ADDRESS = 65
-SCRIPT_ADDRESS = 12
-PUBKEY_ADDRESS_TEST = 127
-SCRIPT_ADDRESS_TEST = 165
-PRIVKEY = 142
-PRIVKEY_TEST = 210
+PUBKEY_ADDRESS = 0x41
+SCRIPT_ADDRESS = 0x25
+PUBKEY_ADDRESS_TEST = 0x7f
+SCRIPT_ADDRESS_TEST = 0x60
+PRIVKEY = 0x46
+PRIVKEY_TEST = 0xe6
 
 metadata_keys = ['isPrivkey', 'isTestnet', 'addrType', 'isCompressed']
 # templates for valid sequences

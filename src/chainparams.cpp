@@ -124,12 +124,12 @@ public:
         vSeeds.push_back(CDNSSeedData("dnsseed-4.firstep-it.net", "dnsseed-4.firstep-it.net", false));
         vSeeds.push_back(CDNSSeedData("dnsseed-5.firstep-it.net", "dnsseed-5.firstep-it.net", false));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,12);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,87);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,142);
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x0d)(0x67)(0xd3)(0x9a).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x0d)(0x67)(0xb3)(0x7a).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0x41); // prefix T
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,0x25); // prefix [F G]
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,0x25); // prefix [F G]
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,0x46); // prefix compressed=B, uncompressed=3 
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x31)(0xd3)(0xa6).convert_to_container<std::vector<unsigned char> >(); // prefix teaL
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x2a)(0x0b)(0x33).convert_to_container<std::vector<unsigned char> >(); // prefix TeaL
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -206,12 +206,12 @@ public:
         vSeeds.push_back(CDNSSeedData("dnsseed-1.firstep-it.net", "dnsseed-1.firstep-it.net", false));
         vSeeds.push_back(CDNSSeedData("dnsseed-2.firstep-it.net", "dnsseed-2.firstep-it.net", false));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,127);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,14);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,89);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,144);
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x0d)(0x67)(0xd5)(0x9c).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x0d)(0x67)(0xb5)(0x7c).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0x7f); // prefix t
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,0x60); // prefix [f g]
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,0x60); // prefix [f g]
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,0xe6); // prefix compressed=b, uncompressed=8
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x31)(0xee)(0xbd).convert_to_container<std::vector<unsigned char> >(); // prefix tesT
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x2a)(0x26)(0x49).convert_to_container<std::vector<unsigned char> >(); // prefix TesT
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -296,12 +296,12 @@ public:
 			0
 	};
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,127);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,91);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,146);
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x0d)(0x67)(0xd7)(0x9e).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x0d)(0x67)(0xb7)(0x7e).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0x7f); // prefix t
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,0x60); // prefix [f g]
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,0x60); // prefix [f g]
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,0xe6); // prefix compressed=b, uncompressed=8
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x31)(0xee)(0xbd).convert_to_container<std::vector<unsigned char> >(); // prefix tesT
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x2a)(0x26)(0x49).convert_to_container<std::vector<unsigned char> >(); // prefix TesT
     }
 
     void UpdateBIP9Parameters(Consensus::DeploymentPos d, int64_t nStartTime, int64_t nTimeout)
