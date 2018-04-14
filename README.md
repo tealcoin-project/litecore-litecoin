@@ -1,6 +1,8 @@
 Tealcoin Core integration/staging tree
 =====================================
 
+[![Build Status](https://travis-ci.org/litecoin-project/litecoin.svg?branch=master)](https://travis-ci.org/litecoin-project/litecoin)
+
 https://tealcoin-project.io
 
 Copyright (c) 2018 Tealcoin Core Developers
